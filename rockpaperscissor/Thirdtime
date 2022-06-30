@@ -1,0 +1,73 @@
+import random                        
+game = ["ROCK", "PAPER", "SCISSORS"]  
+count = 0                             
+score = 0                             
+computerscore =0                      
+
+print ("Welcome")
+while count == 0:                    
+  for i in range (3):                  
+    answer = input ("Enter Rock, Paper, Scissors: ")     
+
+    print (answer.upper())                               
+    computer= random.choice(game)                       
+
+    print ("Computer picks",computer)                    
+
+    if answer.upper() == "ROCK" and computer == "ROCK":          
+      print ("Its a tie!")                                       
+      count +=1                                                  
+
+    elif answer.upper() == "PAPER" and computer == "PAPER":
+      print ("Its a tie!")
+      count +=1
+
+    elif answer.upper() == "SCISSORS" and computer == "SCISSORS":
+      print ("Its a tie!")
+      count +=1
+
+    elif answer.upper() == "PAPER" and computer == "ROCK":
+      print ("You win!")
+      count +=1
+      score +=1                                                
+
+    elif answer.upper() == "PAPER" and computer == "SCISSORS":
+      print ("You lose!")
+      count +=1
+      computerscore +=1                                      
+
+    elif answer.upper() == "ROCK" and computer == "PAPER":
+      print ("You lose!")
+      count +=1
+      computerscore +=1
+
+    elif answer.upper() == "ROCK" and computer == "SCISSORS":
+      print ("You win!")
+      count +=1
+      score +=1
+
+    elif answer.upper() == "SCISSORS" and computer == "ROCK":
+      print ("lose!")
+      count +=1
+      computerscore +=1
+
+    elif answer.upper() == "SCISSORS" and computer == "PAPER":
+      print ("You win!")
+      count +=1
+      score +=1
+
+
+if score < computerscore:                      
+  print ("Your score is", score)
+  print ("Computers socre is",computerscore)
+  print ("Computer wins!.")
+
+if score > computerscore:
+  print ("Your score is", score)
+  print ("Computers socre is",computerscore)
+  print ("You win!.")
+
+if score == computerscore:
+  print ("Your score is", score)
+  print ("Computers socre is",computerscore)
+  print ("Its a tie!!.")
